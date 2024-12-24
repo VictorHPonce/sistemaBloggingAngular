@@ -1,0 +1,19 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .card-img-top {
+    max-height: 200px;
+    object-fit: cover;
+  }
+  .card-img-top {
+    max-width: 100%; /* La imagen no superará el 100% del contenedor */
+    height: auto; /* Mantiene las proporciones del SVG */
+    max-height: 200px; /* Ajusta el tamaño máximo de la imagen */
+  }

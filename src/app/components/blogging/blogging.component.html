@@ -1,0 +1,56 @@
+<div class="container mt-5">
+    <h2>Crear nueva publicación</h2>
+    <div class="form-group mt-3">
+      <label for="titulo">Título</label>
+      <input
+        type="text"
+        id="titulo"
+        class="form-control"
+        placeholder="Título de la noticia"
+        [(ngModel)]="nuevaNoticia.titulo"
+      />
+    </div>
+    <div class="form-group mt-3">
+      <label for="imagen">URL de la imagen</label>
+      <input
+        type="text"
+        id="imagen"
+        class="form-control"
+        placeholder="URL de la imagen"
+        [(ngModel)]="nuevaNoticia.imagen"
+      />
+    </div>
+    <div class="form-group mt-3">
+      <label for="texto">Texto de la noticia</label>
+      <textarea
+        id="texto"
+        class="form-control"
+        rows="3"
+        placeholder="Texto de la noticia"
+        [(ngModel)]="nuevaNoticia.texto"
+      ></textarea>
+    </div>
+    <div class="form-group mt-3">
+      <label for="fecha">Fecha de publicación</label>
+      <input
+        type="date"
+        id="fecha"
+        class="form-control"
+        [(ngModel)]="nuevaNoticia.fecha"
+      />
+    </div>
+    <button class="btn btn-primary mt-3" (click)="agregarNoticia()">Publicar</button>
+  
+    <hr />
+
+    <h2>Noticias publicadas</h2>
+    <div *ngFor="let post of blogPosts" class="card mt-3">
+      <img [src]="post.imagen" class="card-img-top" alt="{{ post.titulo }}" />
+      <div class="card-body">
+        <h5 class="card-title">{{ post.titulo }}</h5>
+        <p class="card-text">{{ post.texto }}</p>
+        <p class="text-muted">Publicado el: {{ post.fecha }}</p>
+      </div>
+    </div>
+  </div>
+  
